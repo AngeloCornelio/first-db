@@ -39,6 +39,16 @@ app.use(express.json());
 
 app.get('/', (req, res) => res.json({ message: 'Hello World' }));
 
+app.post('/user', async (req, res) => {
+  try {
+    const newUser = new User(req.body);
+    await newUser.save();
+    res.json({ user: newUser }); // Returns the new user that
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
