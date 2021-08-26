@@ -49,6 +49,20 @@ app.post('/user', async (req, res) => {
   }
 });
 
+app.get('/user/:userId', async (req, res) => {
+  const { userId } = req.params;
+  try {
+    const user = await User.findAll({
+      where: {
+        id: userId,
+      },
+    });
+    res.json({ user });
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
