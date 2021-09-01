@@ -31,9 +31,12 @@ const User = sequelize.define('user', {
   // options
 });
 
-// Note: using `force: true` will drop the table if it already exists
-User.sync({ force: true }); /* Now the `users` table in the database
-corresponds to the model definition */
+/* Note: using `force: true` will drop the table if it already exists
+ *
+ * Now the `users` table in the database corresponds to the model
+ * definition
+ */
+User.sync({ force: true });
 
 app.use(express.json());
 
@@ -43,7 +46,7 @@ app.post('/user', async (req, res) => {
   try {
     const newUser = new User(req.body);
     await newUser.save();
-    res.json({ user: newUser }); // Returns the new user that
+    res.json({ user: newUser }); // Returns the newly created user
   } catch (error) {
     console.error(error);
   }
