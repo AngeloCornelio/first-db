@@ -1,0 +1,31 @@
+{
+  "name": "first-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngeloCornelio/first-db.git"
+  },
+  "author": "Angelo Cornelio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngeloCornelio/first-db/issues"
+  },
+  "homepage": "https://github.com/AngeloCornelio/first-db#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
+  }
+}
